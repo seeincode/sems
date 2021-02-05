@@ -24,6 +24,7 @@ class DIDial : public AmDynInvoke
 		 const string& user,
 		 const string& from, 
 		 const string& to,
+		 const string& xhdrs,
 		 AmArg* extra_params);
 
   string dialout_auth(const string& application, 

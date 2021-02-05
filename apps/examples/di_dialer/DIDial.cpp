@@ -128,13 +128,14 @@ string DIDial::dialout(const string& application,
 		       const string& user, 
 		       const string& from, 
 		       const string& to,
+           const string& xhdrs,
 		       AmArg* extra_params) {
-  DBG("dialout application '%s', user '%s', from '%s', to '%s'\n", 
-      application.c_str(), user.c_str(), from.c_str(), to.c_str());
+  DBG("dialout application '%s', user '%s', from '%s', to '%s', xhdrs '%s'\n", 
+      application.c_str(), user.c_str(), from.c_str(), to.c_str(), xhdrs.c_str());
 
   string tag = AmUAC::dialout(user.c_str(), application,  to,  
 				"<" + from +  ">", from, "<" + to + ">", 
-				string(""), string(""), extra_params);
+				string(""), xhdrs, extra_params);
   if (!tag.empty())
     return tag;
   else 
