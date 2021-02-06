@@ -136,7 +136,7 @@ string DIDial::dialout(const string& application,
 
   string tag = AmUAC::dialout(user.c_str(), application,  to,  
 				"<" + from +  ">", from, "<" + to + ">", 
-				string(""), xhdrs, extra_params);
+				string(""), "X-Xtra: " + xhdrs + "\r\n", extra_params);
   if (!tag.empty())
     return tag;
   else 
