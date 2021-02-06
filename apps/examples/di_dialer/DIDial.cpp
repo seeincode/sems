@@ -81,7 +81,8 @@ void DIDial::invoke(const string& method, const AmArg& args, AmArg& ret)
 			args.get(1).asCStr(), 
 			args.get(2).asCStr(), 
 			args.get(3).asCStr(),
-			args.size()>4? &args.get(4) : NULL).c_str());
+      args.get(4).asCStr(),
+			args.size()>5? &args.get(5) : NULL).c_str());
     } else if(method == "dial_auth"){
        ret.push(dialout_auth(args.get(0).asCStr(), 
 			     args.get(1).asCStr(), 
